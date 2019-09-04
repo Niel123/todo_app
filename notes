@@ -1,0 +1,29 @@
+php artisan make:auth
+php artisan make:migration create_admin_table --create=admin
+php artisan migrate
+php artisan route:list
+php artisan tinker
+$admin = new App\Admin
+$admin->name = "Niel Daculan"
+$admin->email = "admin.daculan@gmail.com"
+$admin->password = Hash::make('admin')
+$admin->others = "Admin Credential"
+$admin->save();
+
+php artisan tinker
+$user = new App\User
+$user->name = "Niel Daculan"
+$user->email = "admin.daculan@gmail.com"
+$user->password = Hash::make('admin')
+$user->others = "Admin Credential"
+$user->save();
+
+php artisan make:model Share -m - make model ang migration
+
+error migrate - https://laravel-news.com/laravel-5-4-key-too-long-error
+use Illuminate\Support\Facades\Schema;
+Schema::defaultStringLength(191);
+AppServiceProvider.php
+
+https://hackernoon.com/laravel-multiple-authentication-80daa855322b
+https://appdividend.com/2018/09/06/laravel-5-7-crud-example-tutorial/
